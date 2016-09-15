@@ -2,7 +2,7 @@ var fs = require('fs'),
 	stdin = process.stdin,
 	stdout = process.stdout,
 	stats = [];
-
+//采取递归展示所有数据并生成列表
 function file(i,files){
 	//获取文件名
 	var filename = files[i];
@@ -24,7 +24,7 @@ function file(i,files){
 		}
 	})
 }
-
+//读取所选文件
 function read(files,stats){
 	console.log(' ');
 	//文本不换行
@@ -40,11 +40,15 @@ function read(files,stats){
 	function option(data){
 		var num = Number(data),
 		filename = files[num];
+		//判断输入文件是否在列表项
 		if(!filename){
 			stdout.write("\033[31m 重新输入您的选择： \033[39m");	
 		}else{
+			//所选索引在列表项
 			stdin.pause();
+			//判断是否为文件夹
 			if(stats[num].isDirectory()){
+				//读取文件夹文件列表
 				fs.readdir(process.cwd()+'/'+filename,function(err,files){
 					console.log(' ');
 					console.log('   ('+files.length+'  )文件');
@@ -54,6 +58,7 @@ function read(files,stats){
 					console.log(' ');
 				})
 			}else{
+				//直接读取文件
 				fs.readFile(process.cwd()+'/'+filename,'utf8',function(err,data){
 					console.log(' ');
 					console.log('\033[90m'+ data.replace(/(.*)/g,'    $1')+'\033[39m')
@@ -63,7 +68,7 @@ function read(files,stats){
 	}
 }
 
-
+//执行函数
 fs.readdir(process.cwd(),function(err,files){
 	//输出空行
 	console.log(' ');
