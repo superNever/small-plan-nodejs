@@ -30,3 +30,26 @@
 - **stdout** 标准输出
 - **stderr** 标准错误
 
+
+## cli变量
+
+- __dirname: 执行文件时，该文件在文件系统中的位置
+- process.cwd() : 当前目录，静态
+- 环境变量 : process.env
+- 退出: process.exit()
+- 信号： process.on('SIGKILL',function(){})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
