@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/superNever/small-plan-nodejs/issues"
   },
-  "homepage": "https://github.com/superNever/small-plan-nodejs#readme"
+  "homepage": "https://github.com/superNever/small-plan-nodejs#readme",
+  "devDependencies": {
+    "chalk": "^1.1.3"
+  }
 }
