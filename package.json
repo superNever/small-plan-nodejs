@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/superNever/small-plan-nodejs#readme",
   "devDependencies": {
-    "chalk": "^1.1.3"
+    "chalk": "^1.1.3",
+    "connect": "^3.5.0",
+    "morgan": "^1.7.0",
+    "serve-static": "^1.11.1"
   }
 }
